@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="MicroBlogTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2024-11-16T12:02:45" hostname="DESKTOP-FR57KQ4" time="0.069">
+  <properties/>
+  <testcase name="germanLanguageShort_broth()" classname="MicroBlogTest" time="0.04"/>
+  <testcase name="bulgarianLanguageShort_good()" classname="MicroBlogTest" time="0.002"/>
+  <testcase name="mathsShort()" classname="MicroBlogTest" time="0.002"/>
+  <testcase name="englishLanguageShort()" classname="MicroBlogTest" time="0.002"/>
+  <testcase name="royalFlush()" classname="MicroBlogTest" time="0.002"/>
+  <testcase name="englishLanguageLong()" classname="MicroBlogTest" time="0.001"/>
+  <testcase name="germanLanguageLong_bearCarpet_to_beards()" classname="MicroBlogTest" time="0.001"/>
+  <testcase name="greekLanguageShort_health()" classname="MicroBlogTest" time="0.002"/>
+  <testcase name="emojiShort()" classname="MicroBlogTest" time="0.001"/>
+  <testcase name="mathsLong()" classname="MicroBlogTest" time="0.001"/>
+  <testcase name="englishAndEmojiShort()" classname="MicroBlogTest" time="0.001"/>
+  <testcase name="emojiLong()" classname="MicroBlogTest" time="0.001"/>
+  <system-out><![CDATA[brühe
+Добър
+a=πr²
+Hi
+]]>&#x1f0ce;<![CDATA[]]>&#x1f0b8;<![CDATA[]]>&#x1f0c5;<![CDATA[]]>&#x1f0cb;<![CDATA[]]>&#x1f0cd;<![CDATA[
+Hello
+Bärte
+υγειά
+]]>&#x1f487;<![CDATA[
+∅⊊ℕ⊊ℤ
+Fly ]]>&#x1f6eb;<![CDATA[
+❄]]>&#x1f321;<![CDATA[]]>&#x1f927;<![CDATA[]]>&#x1f912;<![CDATA[]]>&#x1f3e5;<![CDATA[
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="EliudsEggsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-11-16T21:19:01" hostname="DESKTOP-FR57KQ4" time="0.038">
+  <properties/>
+  <testcase name="13 eggs" classname="EliudsEggsTest" time="0.038"/>
+  <system-out><![CDATA[1110111001101011001010000000000
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="KindergartenGardenTest" tests="17" skipped="0" failures="0" errors="0" timestamp="2024-11-21T02:00:45" hostname="DESKTOP-FR57KQ4" time="0.07">
+  <properties/>
+  <testcase name="fullGardenForHarriet()" classname="KindergartenGardenTest" time="0.048"/>
+  <testcase name="singleStudent2()" classname="KindergartenGardenTest" time="0.001"/>
+  <testcase name="fullGardenForCharlie()" classname="KindergartenGardenTest" time="0.0"/>
+  <testcase name="fullGardenForFred()" classname="KindergartenGardenTest" time="0.001"/>
+  <testcase name="twoStudents()" classname="KindergartenGardenTest" time="0.001"/>
+  <testcase name="singleStudent()" classname="KindergartenGardenTest" time="0.001"/>
+  <testcase name="fullGardenForIleana()" classname="KindergartenGardenTest" time="0.001"/>
+  <testcase name="fullGardenForAlice()" classname="KindergartenGardenTest" time="0.0"/>
+  <testcase name="fullGardenForJoseph()" classname="KindergartenGardenTest" time="0.0"/>
+  <testcase name="fullGardenForDavid()" classname="KindergartenGardenTest" time="0.001"/>
+  <testcase name="fullGardenForGinny()" classname="KindergartenGardenTest" time="0.001"/>
+  <testcase name="fullGardenForLarry()" classname="KindergartenGardenTest" time="0.0"/>
+  <testcase name="oneGardenThirdStudent()" classname="KindergartenGardenTest" time="0.0"/>
+  <testcase name="fullGardenForKincaid()" classname="KindergartenGardenTest" time="0.0"/>
+  <testcase name="oneGardenSecondStudent()" classname="KindergartenGardenTest" time="0.001"/>
+  <testcase name="fullGardenForBob()" classname="KindergartenGardenTest" time="0.0"/>
+  <testcase name="fullGardenForEve()" classname="KindergartenGardenTest" time="0.001"/>
+  <system-out><![CDATA[VR
+RV
+VC
+RC
+VV
+CG
+GC
+VC
+CG
+RC
+RC
+GG
+GC
+VC
+VR
+VR
+VC
+VG
+RV
+CR
+CG
+GC
+GV
+CV
+GG
+GG
+GC
+CG
+CC
+CC
+CG
+CC
+CG
+RG
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
