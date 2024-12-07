@@ -2,3 +2,9 @@
 /shelf/
 /workspace.xml
 *.hprof
+*.bin
+*.lock
+.gradle/
+/.gradle/
+build/
+/build/
