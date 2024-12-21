@@ -3,23 +3,16 @@ import java.util.List;
 
 class GameOfLife {
     public int[][] tick(int[][] matrix){
-        List<Cell> cells;
-        int[][] aliveCells; 
 
         if (matrix.length == 0){
             return matrix;
         } else {
-            cells = getAllCellsInMatrix(matrix);
-            aliveCells = new int[matrix.length][matrix[0].length];
-            for (Cell cell : cells) {
-                aliveCells[cell.pos.row][cell.pos.column] = cell.state;
-            }
+            return getAllCellsInMatrix(matrix);
         }
-        return aliveCells;
     }
 
-    private List<Cell> getAllCellsInMatrix(int[][] matrix) {
-        List<Cell> cellList = new ArrayList<>();
+    private int[][] getAllCellsInMatrix(int[][] matrix) {
+        int[][] aliveCells = new int[matrix.length][matrix[0].length];
         int row, col; row = 0;
 
         for (int[] rowArray : matrix) {
@@ -29,12 +22,12 @@ class GameOfLife {
                 Cell cell = new Cell(value, pos);
                 var neighbords = getNeighborPositions(row, col, matrix);
                 cell.setNeighbordList(neighbords);
-                cellList.add(cell);
+                aliveCells[cell.pos.row][cell.pos.column] = cell.state;
                 col++;
             }
             row++;
         }
-        return cellList;
+        return aliveCells;
     }
 
     private List<Cell> getNeighborPositions(int currentRow, int currentCol, int [][] matrix) {
