@@ -27,20 +27,22 @@ class GrepTool {
                         if (line.equals(pattern)) {
                             match = true;
                         }
+                    } else if (flags.contains("-v")) {
+                        if (! line.contains(pattern)) {
+                            match = true;
+                        }
                     } else {
                         if (line.contains(pattern)) {
                             match = true;
                         }
                     }
 
-                    if ( match ) {
-                        if (flags.contains("-n")) {
-                            result.append(i).append(":");
-                        }
+                    if ( match ) {                        
                         if (flags.contains("-l")) {
                             result.append(file);
-                            break;
-                            
+                            break;                            
+                        } else if (flags.contains("-n")) {
+                            result.append(i).append(":");
                         }
                         
                         result.append(line).append("\n");
