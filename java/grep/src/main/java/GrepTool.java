@@ -17,36 +17,72 @@ class GrepTool {
                 for (String line : lines) {
                     System.out.print(line);
                     i++;
-                    boolean match = false;
+                    boolean matchCase = false;
+                    boolean matchWholeLine = false;
+                    boolean matchInvert = false;
+                    boolean matchDefault = false;
 
-                    if (flags.contains("-i")) {
+                    if (flags.contains("-i")) { // ignore case
                         if (line.toLowerCase().contains(pattern.toLowerCase())) {
-                            match = true;
+                            matchCase = true;
                         }
-                    } else if (flags.contains("-x")) {
+                    } 
+                    if (flags.contains("-x")) { // match whole line
                         if (line.equals(pattern)) {
-                            match = true;
+                            matchWholeLine = true;
                         }
-                    } else if (flags.contains("-v")) {
-                        if (! line.contains(pattern)) {
-                            match = true;
-                        }
-                    } else {
-                        if (line.contains(pattern)) {
-                            match = true;
-                        }
+                    } 
+                    if (flags.contains("-v")) { // invert match : print lines that do not contain the pattern
+                            matchInvert = !line.contains(pattern);
                     }
-
-                    if ( match ) {                        
-                        if (flags.contains("-l")) {
-                            result.append(file);
-                            break;                            
-                        } else if (flags.contains("-n")) {
-                            result.append(i).append(":");
+                    if (flags.isEmpty() || flags.contains("-n" ) || flags.contains("-l" )) { // default match
+                        if (line.contains(pattern)) {
+                            matchDefault = true;
                         }
                         
-                        result.append(line).append("\n");
+                    } 
+
+                    if (flags.contains("-l") && (matchDefault || matchCase || matchWholeLine || matchInvert)) {
+                        result.append(file);
+                        break;  
                     }
+                    // these two flags cannot exlude each other need to be compared as a pair    
+                    if (flags.size() == 2 && (matchWholeLine && !matchInvert)) {
+                        continue;
+                    }
+
+                    if ( matchDefault ) {
+                        if (flags.contains("-n")) { // print line numbers
+                            result.append(i).append(":");
+                        }
+                        result.append(line).append("\n");
+                        continue;
+                    } 
+                    if (matchCase ) {
+                        if (flags.contains("-n")) { // print line numbers
+                            result.append(i).append(":");
+                        }
+                        result.append(line).append("\n");
+                        continue;
+                    } 
+
+                    if (matchInvert) {   // print lines that do not contain the pattern
+                        if (flags.contains("-n")) { 
+                            result.append(i).append(":");
+                        }
+                        result.append(line).append("\n");
+                        continue;
+                    } 
+
+
+                    if (matchWholeLine) {
+                        if (flags.contains("-n")) { // print line numbers
+                            result.append(i).append(":");
+                        }
+                        result.append(line).append("\n");
+                        continue;
+                    }
+                    
                 }
             } catch (IOException e) {
                 e.printStackTrace();
