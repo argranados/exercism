@@ -53,12 +53,19 @@ class GrepTool {
                         }
                     }
                     
+                    if (flags.size() == 2 && (matchWholeLine && !matchInvert)) {
+                        continue;
+                    }
+
                     if ((flags.contains("-l") || files.size() > 1 ) && (matchDefault || matchCase || matchWholeLine || matchInvert)) {
                         result.append(file);
                         if ( files.size() > 1 ) {
-                            if (flags.contains("-l")) {  // this means only flag is -l => FILES_NAMES_ONLY
+                            if ( flags.size() == 1 && flags.contains("-l")) {  // this means FILES_NAMES only
                                 result.append("\n");
                                 break;
+                            } else if ( flags.size() == 2 & flags.contains("-n")) { // File Flag Takes Precedence Over Line Number Flag
+                                result.append("\n");
+                                continue;
                             } else {                       // this means there are more flags, so will append the line
                                 result.append(":");
                             }
@@ -68,9 +75,9 @@ class GrepTool {
 
                     }
                     // these two flags cannot exlude each other need to be compared as a pair    
-                    if (flags.size() == 2 && (matchWholeLine && !matchInvert)) {
-                        continue;
-                    }
+                    // if (flags.size() == 2 && (matchWholeLine && !matchInvert)) {
+                    //     continue;
+                    // }
 
                     if ( matchDefault ) {
                         if (flags.contains("-n")) { // print line numbers
