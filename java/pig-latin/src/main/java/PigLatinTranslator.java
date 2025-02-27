@@ -1,6 +1,8 @@
 import java.util.StringTokenizer;
 
 class PigLatinTranslator {
+    public static final String PIG_SUFFIX = "ay";
+
     public String translate(String word) {
         StringTokenizer tokenizer = new StringTokenizer(word);
         String translated = new String();
@@ -13,14 +15,11 @@ class PigLatinTranslator {
     }
 
     String translateWord(String word) {
-        if (beginsWithVowel(word)  ) {        // RULE 1
-            word = word.concat("ay");
-        } else if (beginsWithXRorYT(word)) {    // RULE 1
-            word = word.concat("ay");            
+        if (beginsWithVowel(word) || beginsWithXRorYT(word) ) {        // RULE 1
+            return word.concat(PIG_SUFFIX);
         } else {
-            word = beginsWithOneOrMoreConsonants(word) + "ay"; // RULE 2,3,4
+            return beginsWithOneOrMoreConsonants(word) + PIG_SUFFIX; // RULE 2,3,4
         }
-        return word;
     }
 
     boolean beginsWithVowel(String word) {  
